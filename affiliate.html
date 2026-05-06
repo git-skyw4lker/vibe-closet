@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Affiliate Program | VibeCloset</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cream: #FFF2E0;
+    --lavender-light: #C0C9EE;
+    --lavender-mid: #A2AADB;
+    --lavender-deep: #898AC4;
+    --text-dark: #1a1724;
+    --text-mid: #4a4560;
+    --text-soft: #7a768e;
+    --white: #ffffff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text-dark); }
+  nav { position: fixed; top: 1rem; left: 50%; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; gap: 1.5rem; padding: 0.95rem 1.5rem; background: rgba(255,242,224,0.96); backdrop-filter: blur(20px); border: 1px solid rgba(137,138,196,0.16); border-radius: 48px; max-width: min(1080px, calc(100% - 2rem)); box-shadow: 0 14px 45px rgba(137,138,196,0.12); z-index: 100; }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 600; color: var(--lavender-deep); }
+  .nav-logo span { color: var(--text-dark); font-style: italic; }
+  .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+  .nav-links a { color: var(--text-mid); text-decoration: none; font-size: 0.9rem; letter-spacing: 0.04em; font-weight: 500; }
+  .nav-cta { padding: 0.55rem 1.1rem; border-radius: 999px; background: var(--lavender-deep); color: white; text-decoration: none; font-weight: 600; }
+  .page-shell { padding: 10rem 2rem 4rem; max-width: 1080px; margin: 0 auto; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 5vw, 4.6rem); line-height: 1.05; margin-bottom: 1rem; }
+  .hero-sub { color: var(--text-mid); font-size: 1.05rem; line-height: 1.7; max-width: 620px; margin-bottom: 2rem; }
+  .affiliate-panel { background: white; border-radius: 32px; padding: 3rem; box-shadow: 0 24px 60px rgba(137,138,196,0.12); border: 1px solid rgba(162,170,219,0.18); }
+  .affiliate-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+  .affiliate-card { background: #f7f3ff; border-radius: 24px; padding: 1.8rem; border: 1px solid rgba(162,170,219,0.2); }
+  .affiliate-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; margin-bottom: 0.8rem; }
+  .affiliate-card p { color: var(--text-mid); line-height: 1.75; }
+  .card-tag { display: inline-flex; padding: 0.35rem 0.9rem; border-radius: 999px; background: var(--lavender-light); color: var(--lavender-deep); font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem; }
+  .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2.5rem; }
+  .btn-primary { display: inline-flex; align-items: center; justify-content: center; padding: 1rem 1.6rem; border-radius: 999px; background: var(--lavender-deep); color: white; text-decoration: none; font-weight: 600; box-shadow: 0 10px 30px rgba(137,138,196,0.2); }
+  .btn-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 1rem 1.6rem; border-radius: 999px; background: transparent; border: 1.5px solid rgba(137,138,196,0.45); color: var(--text-mid); text-decoration: none; font-weight: 600; }
+  footer { text-align: center; margin-top: 3rem; color: var(--text-soft); }
+  @media (max-width: 960px) { .affiliate-grid { grid-template-columns: 1fr; } .cta-row { justify-content: center; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">Vibe<span>Closet</span></div>
+  <div class="nav-links">
+    <a href="index.html#features">Features</a>
+    <a href="index.html#how-it-works">How It Works</a>
+    <a href="affiliate.html">Affiliate</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="signup.html" class="nav-cta">Sign Up</a>
+  </div>
+</nav>
+<main class="page-shell">
+  <div class="hero-title">Make money with our app.</div>
+  <p class="hero-sub">Join the VibeCloset affiliate program and earn uncapped commissions for every new user you bring in. The more you promote, the more you make.</p>
+  <div class="affiliate-panel">
+    <div class="affiliate-grid">
+      <div class="affiliate-card">
+        <span class="card-tag">Unlimited</span>
+        <h3>Unlimited earnings</h3>
+        <p>Earn without a cap. Every referral adds to your commission total.</p>
+      </div>
+      <div class="affiliate-card">
+        <span class="card-tag">Instant</span>
+        <h3>Fast setup</h3>
+        <p>Sign up in minutes and share a custom link right away.</p>
+      </div>
+      <div class="affiliate-card">
+        <span class="card-tag">Insightful</span>
+        <h3>Performance tracking</h3>
+        <p>Monitor clicks, conversions, and payouts from one dashboard.</p>
+      </div>
+    </div>
+    <div class="cta-row">
+      <a href="signup.html" class="btn-primary">Sign up now</a>
+      <a href="dashboard.html" class="btn-secondary">View dashboard</a>
+    </div>
+  </div>
+</main>
+<footer>Ready to grow? Start promoting VibeCloset today and turn every recommendation into revenue.</footer>
+</body>
+</html>

@@ -31,30 +31,35 @@
 
   /* ── NAV ── */
   nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.2rem 4rem;
-    background: rgba(255,242,224,0.85);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(137,138,196,0.12);
+    position: fixed; top: 1rem; left: 50%; transform: translateX(-50%);
+    z-index: 100;
+    display: flex; align-items: center; justify-content: center;
+    gap: 2rem;
+    padding: 0.95rem 1.5rem;
+    background: rgba(255,242,224,0.96);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(137,138,196,0.16);
+    border-radius: 48px;
+    max-width: min(1080px, calc(100% - 2rem));
+    box-shadow: 0 14px 45px rgba(137,138,196,0.12);
   }
   .nav-logo {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.55rem; font-weight: 600; letter-spacing: 0.04em;
+    font-size: 1.6rem; font-weight: 700; letter-spacing: 0.05em;
     color: var(--lavender-deep);
   }
   .nav-logo span { color: var(--text-dark); font-style: italic; }
   .nav-links { display: flex; gap: 2.2rem; align-items: center; }
   .nav-links a {
-    text-decoration: none; font-size: 0.82rem; letter-spacing: 0.08em;
-    text-transform: uppercase; color: var(--text-mid); font-weight: 500;
+    text-decoration: none; font-size: 0.86rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--text-mid); font-weight: 600;
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--lavender-deep); }
   .nav-cta {
     background: var(--lavender-deep); color: #fff;
-    padding: 0.6rem 1.4rem; border-radius: 2rem;
-    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em;
+    padding: 0.75rem 1.6rem; border-radius: 2.5rem;
+    font-size: 0.88rem; font-weight: 700; letter-spacing: 0.08em;
     text-transform: uppercase; text-decoration: none;
     transition: transform 0.2s, box-shadow 0.2s;
     box-shadow: 0 4px 18px rgba(137,138,196,0.35);
@@ -95,7 +100,7 @@
   h1 {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(3rem, 5.5vw, 5.2rem);
-    font-weight: 300; line-height: 1.08; letter-spacing: -0.01em;
+    font-weight: 600; line-height: 1.08; letter-spacing: -0.01em;
     color: var(--text-dark); margin-bottom: 1.6rem;
   }
   h1 em { font-style: italic; color: var(--lavender-deep); }
@@ -316,6 +321,38 @@
   }
   .step-desc { font-size: 0.82rem; color: var(--text-soft); line-height: 1.65; }
 
+  /* ── AFFILIATE SECTION ── */
+  .affiliate-section {
+    background: linear-gradient(160deg, #f9f6ff 0%, #fff7ee 100%);
+    padding: 7rem 4rem;
+  }
+  .affiliate-sub {
+    max-width: 620px; margin: 0.9rem auto 2.5rem;
+    color: var(--text-mid); font-size: 1rem; line-height: 1.75;
+  }
+  .affiliate-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem;
+  }
+  .affiliate-card {
+    background: white; border-radius: 24px; padding: 2rem;
+    border: 1px solid rgba(162,170,219,0.2);
+    box-shadow: 0 18px 40px rgba(137,138,196,0.08);
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .affiliate-card:hover { transform: translateY(-5px); box-shadow: 0 24px 60px rgba(137,138,196,0.14); }
+  .card-tag {
+    display: inline-flex; padding: 0.35rem 0.85rem; border-radius: 999px;
+    background: var(--lavender-light); color: var(--lavender-deep);
+    font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem;
+  }
+  .affiliate-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem; margin-bottom: 0.9rem; color: var(--text-dark);
+  }
+  .affiliate-card p {
+    color: var(--text-mid); line-height: 1.75; font-size: 0.92rem;
+  }
+
   /* ── TESTIMONIALS ── */
   .testi-section { background: var(--lavender-deep); }
   .testi-section h2 { color: var(--cream); }
@@ -412,7 +449,7 @@
   .cta-section h2 { font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 1.2rem; }
   .cta-sub {
     font-size: 1.05rem; color: var(--text-mid); max-width: 440px;
-    margin: 0 auto 2.5rem; line-height: 1.7; font-weight: 300;
+    margin: 0 auto 2.5rem; line-height: 1.7; font-weight: 400;
   }
   .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
   .store-btn {
@@ -484,8 +521,9 @@
   <div class="nav-links">
     <a href="#features">Features</a>
     <a href="#how-it-works">How It Works</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#download" class="nav-cta">Download App</a>
+    <a href="affiliate.html">Affiliate</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="signup.html" class="nav-cta">SignUp</a>
   </div>
 </nav>
 
@@ -678,72 +716,32 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="testi-section">
+<!-- AFFILIATE -->
+<section id="affiliate" class="affiliate-section">
   <div style="text-align:center;" class="fade-in">
-    <div class="section-eyebrow">Real Stories</div>
-    <h2>What our users say</h2>
+    <div class="section-eyebrow">Affiliate Program</div>
+    <h2>Make money with our app.<br><em>The more you promote, the more you earn.</em></h2>
+    <p class="affiliate-sub">Join our affiliate family and earn unlimited commissions for every user who signs up through your link. Promote VibeCloset, grow your audience, and watch your rewards scale without limits.</p>
   </div>
-  <div class="testi-grid">
-    <div class="testi-card fade-in fade-in-delay-1">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">"I had 80 pieces in my closet and was still buying more. VibeCloset showed me I was missing 3 basics. Saved me ₹8,000 this month."</p>
-      <div class="testi-author">Priya M.</div>
-      <div class="testi-role">Marketing Manager, Mumbai</div>
+  <div class="affiliate-grid">
+    <div class="affiliate-card fade-in fade-in-delay-1">
+      <span class="card-tag">Unlimited</span>
+      <h3>Unlimited earnings</h3>
+      <p>There is no cap on what you can earn. The more people you bring in, the more money you make.</p>
     </div>
-    <div class="testi-card fade-in fade-in-delay-2">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">"The inspiration scanner is unreal. I uploaded a Zara screenshot and it literally found everything I already owned that matched it."</p>
-      <div class="testi-author">Aisha R.</div>
-      <div class="testi-role">Designer, Bangalore</div>
+    <div class="affiliate-card fade-in fade-in-delay-2">
+      <span class="card-tag">Easy launch</span>
+      <h3>Sign up fast</h3>
+      <p>Create your affiliate account, get a custom referral link, and start sharing within minutes.</p>
     </div>
-    <div class="testi-card fade-in fade-in-delay-3">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">"Getting dressed used to take me 20 minutes. Now I open the app, pick an outfit, and I'm out in under 5. My mornings are so much calmer."</p>
-      <div class="testi-author">Sneha K.</div>
-      <div class="testi-role">Tech Lead, Delhi</div>
+    <div class="affiliate-card fade-in fade-in-delay-3">
+      <span class="card-tag">Growth tools</span>
+      <h3>Performance dashboard</h3>
+      <p>Track clicks, conversions, and commissions in one intuitive dashboard built for growth.</p>
     </div>
   </div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing" class="pricing-section">
-  <div style="text-align:center;" class="fade-in">
-    <div class="section-eyebrow">Plans</div>
-    <h2>Start free. Upgrade when<br>you're <em>obsessed.</em></h2>
-    <p style="color:var(--text-soft); margin-top:0.8rem; font-size:0.9rem;">No credit card required to start.</p>
-  </div>
-  <div class="pricing-grid">
-    <div class="pricing-card fade-in fade-in-delay-1">
-      <span class="plan-badge free">Free</span>
-      <div class="plan-name">Starter</div>
-      <div class="plan-price">₹0</div>
-      <div class="plan-period">forever free</div>
-      <ul class="plan-features">
-        <li class="plan-feature">Digital closet up to 30 items</li>
-        <li class="plan-feature">Daily outfit suggestions</li>
-        <li class="plan-feature">AI stylist chat (5/day)</li>
-        <li class="plan-feature">Inspiration scanner (3/month)</li>
-        <li class="plan-feature">Basic product search</li>
-      </ul>
-      <a href="#" class="btn-plan outline">Download Free</a>
-    </div>
-    <div class="pricing-card featured fade-in fade-in-delay-2">
-      <span class="plan-badge premium">✦ Premium</span>
-      <div class="plan-name">Stylist</div>
-      <div class="plan-price">₹299</div>
-      <div class="plan-period">per month · cancel anytime</div>
-      <ul class="plan-features">
-        <li class="plan-feature">Unlimited closet items</li>
-        <li class="plan-feature">Virtual try-on (avatar + your photo)</li>
-        <li class="plan-feature">Unlimited AI stylist chat</li>
-        <li class="plan-feature">Closet gap audit</li>
-        <li class="plan-feature">Price-drop alerts</li>
-        <li class="plan-feature">Wear history & analytics</li>
-        <li class="plan-feature">Priority outfit generation</li>
-      </ul>
-      <a href="#" class="btn-plan filled">Start 7-Day Free Trial</a>
-    </div>
+  <div style="text-align:center; margin-top: 2.5rem;" class="fade-in fade-in-delay-2">
+    <a href="signup.html" class="btn-primary">Join the program</a>
   </div>
 </section>
 
@@ -754,14 +752,18 @@
   <p class="cta-sub fade-in fade-in-delay-1">Join thousands of people who stopped guessing and started dressing with confidence.</p>
   <div class="cta-actions fade-in fade-in-delay-2">
     <a href="#" class="store-btn">
-      <span class="store-icon">🍎</span>
+      <span class="store-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M16.5 2.5c-.7.1-1.4.5-1.9 1.1-.4.5-.8 1.1-.7 1.8.8.1 1.5-.4 2-1 .4-.5.8-1.1.7-1.8zm-2.5 5.6c-.9-.1-2 .5-2.5 1.1-.5.6-.9 1.5-.8 2.5.9.1 2-.5 2.5-1.1.5-.6.9-1.5.8-2.5zm4.8 8.6c-.6 1.6-1.8 2.9-3.3 3.6-1.3.6-2.7.7-4.1.3-1-.3-1.9-1-2.6-1.8-.5-.5-1-1.1-1.4-1.8-.4-.8-.6-1.7-.4-2.6.1-.9.6-1.8 1.3-2.4.8-.8 1.9-1.2 3-1.1.2 0 .4 0 .6.1.1 0 .2.1.2.2.1.3.2.6.1.9-.1.2-.2.4-.4.5-.6.4-1.2.9-1.6 1.5-.3.4-.6.9-.8 1.4-.2.5-.3 1-.2 1.5.1.5.3 1 .6 1.4.7 1.1 1.9 1.9 3.2 2 .8.1 1.6-.1 2.3-.4.6-.3 1.2-.7 1.7-1.2.6-.6 1-1.3 1.3-2.1.2-.5.2-1.1.1-1.7-.1-.6-.3-1.2-.6-1.7-.5-.9-1.3-1.6-2.3-1.8-.1 0-.2-.1-.3-.1z"/></svg>
+      </span>
       <span class="store-text">
         <span class="store-sub">Download on the</span>
         <span class="store-name">App Store</span>
       </span>
     </a>
     <a href="#" class="store-btn">
-      <span class="store-icon">▶</span>
+      <span class="store-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M4 4l16 8-16 8V4z"/></svg>
+      </span>
       <span class="store-text">
         <span class="store-sub">Get it on</span>
         <span class="store-name">Google Play</span>

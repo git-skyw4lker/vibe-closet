@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sign Up | VibeCloset</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cream: #FFF2E0;
+    --lavender-light: #C0C9EE;
+    --lavender-mid: #A2AADB;
+    --lavender-deep: #898AC4;
+    --text-dark: #1a1724;
+    --text-mid: #4a4560;
+    --text-soft: #7a768e;
+    --white: #ffffff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text-dark); }
+  nav {
+    position: fixed; top: 1rem; left: 50%; transform: translateX(-50%);
+    display: flex; align-items: center; justify-content: center; gap: 1.5rem;
+    padding: 0.95rem 1.5rem; background: rgba(255,242,224,0.96);
+    backdrop-filter: blur(20px); border: 1px solid rgba(137,138,196,0.16);
+    border-radius: 48px; max-width: min(1080px, calc(100% - 2rem));
+    box-shadow: 0 14px 45px rgba(137,138,196,0.12); z-index: 100;
+  }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 600; color: var(--lavender-deep); }
+  .nav-logo span { color: var(--text-dark); font-style: italic; }
+  .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+  .nav-links a { color: var(--text-mid); text-decoration: none; font-size: 0.9rem; letter-spacing: 0.04em; font-weight: 500; }
+  .nav-cta { padding: 0.55rem 1.1rem; border-radius: 999px; background: var(--lavender-deep); color: white; text-decoration: none; font-weight: 600; }
+  .page-shell { padding: 10rem 2rem 4rem; max-width: 820px; margin: 0 auto; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.05; margin-bottom: 1rem; }
+  .hero-sub { color: var(--text-mid); font-size: 1rem; line-height: 1.8; margin-bottom: 2rem; }
+  .signup-card { background: white; border-radius: 28px; padding: 3rem; box-shadow: 0 24px 60px rgba(137,138,196,0.12); border: 1px solid rgba(162,170,219,0.18); }
+  .form-group { display: grid; gap: 0.75rem; margin-bottom: 1.4rem; }
+  label { font-size: 0.9rem; color: var(--text-dark); font-weight: 500; }
+  input, select { width: 100%; padding: 0.95rem 1rem; border: 1px solid rgba(162,170,219,0.35); border-radius: 16px; font-size: 0.95rem; color: var(--text-dark); background: #fdfbfa; }
+  .helper { font-size: 0.82rem; color: var(--text-soft); }
+  .btn-primary { display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 1rem 1.2rem; border-radius: 999px; border: none; background: var(--lavender-deep); color: white; font-size: 0.95rem; font-weight: 600; cursor: pointer; box-shadow: 0 10px 30px rgba(137,138,196,0.2); }
+  .small-note { margin-top: 1.2rem; font-size: 0.92rem; color: var(--text-mid); }
+  footer { text-align: center; margin-top: 3rem; font-size: 0.82rem; color: var(--text-soft); }
+  @media (max-width: 720px) { nav { flex-wrap: wrap; padding: 0.9rem 1rem; } .page-shell { padding-top: 8rem; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">Vibe<span>Closet</span></div>
+  <div class="nav-links">
+    <a href="index.html#features">Features</a>
+    <a href="index.html#how-it-works">How It Works</a>
+    <a href="affiliate.html">Affiliate</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="signup.html" class="nav-cta">Sign Up</a>
+  </div>
+</nav>
+<main class="page-shell">
+  <div class="hero-title">Create your account and start earning.</div>
+  <p class="hero-sub">Join VibeCloset to access styling tools, affiliate rewards, and a dashboard that tracks every referral. It only takes a few details to begin.</p>
+  <div class="signup-card">
+    <form class="signup-form">
+      <div class="form-group">
+        <label for="name">Full name</label>
+        <input id="name" type="text" placeholder="Your name" />
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input id="email" type="email" placeholder="you@example.com" />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Choose a secure password" />
+      </div>
+      <div class="form-group">
+        <label for="interest">I'm signing up as</label>
+        <select id="interest">
+          <option>Affiliate partner</option>
+          <option>App user</option>
+          <option>Brand partner</option>
+        </select>
+      </div>
+      <button type="submit" class="btn-primary">Create Account</button>
+      <p class="small-note">No credit card required. Start promoting with your affiliate link instantly.</p>
+    </form>
+  </div>
+</main>
+<footer>Already a member? <a href="dashboard.html" style="color: var(--lavender-deep); text-decoration:none;">Go to dashboard</a>.</footer>
+</body>
+</html>
